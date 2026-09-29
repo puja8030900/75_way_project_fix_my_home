@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+@theme {
+  /* Warm neutrals */
+  --color-navy-50: #faf9f7;
+  --color-navy-100: #f5f3ef;
+  --color-navy-200: #e8e4de;
+  --color-navy-300: #d4cec4;
+  --color-navy-400: #a39e93;
+  --color-navy-500: #736e64;
+  --color-navy-600: #5c574e;
+  --color-navy-700: #3d3a34;
+  --color-navy-800: #2a2722;
+  --color-navy-900: #1a1816;
+  
+  /* Warm orange palette */
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #ffedd5;
+  --color-orange-200: #fed7aa;
+  --color-orange-300: #fdba74;
+  --color-orange-400: #fb923c;
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  --color-orange-700: #c2410c;
+  --color-orange-800: #9a3412;
+  --color-orange-900: #7c2d12;
+  
+  --font-sans: "Plus Jakarta Sans", "system-ui", "sans-serif";
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-navy-50 text-navy-900 antialiased selection:bg-orange-400 selection:text-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-orange-500 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-orange-600 transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-navy-900 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-navy-800 transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-outline {
+    @apply border-2 border-navy-800 text-navy-800 px-6 py-2.5 rounded-full font-semibold hover:bg-navy-800 hover:text-white transition-all duration-200;
+  }
+  .input-field {
+    @apply w-full border border-navy-200 bg-white rounded-xl px-4 py-3 focus:ring-2 focus:ring-orange-400/30 focus:border-orange-400 outline-none transition-all text-navy-800 placeholder-navy-400;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-navy-100 overflow-hidden hover:shadow-md transition-all duration-200;
+  }
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/40 shadow-lg rounded-2xl;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #faf9f7;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4cec4;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a39e93;
+}
